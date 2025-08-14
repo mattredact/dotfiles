@@ -44,7 +44,7 @@ alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
 # Yazi Alias
-alias y ='yazi'
+alias y='yazi'
 
 # Tmux Alias
 alias tm='tmux'
