@@ -1,0 +1,105 @@
+{
+    "height": 34, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "memory", "cpu", "temperature","clock", "tray"],
+    "layer": "top",
+    "position": "top",
+
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "sort-by-number": true,
+      "sort-by-name": false,
+      "all-outputs": true,
+      "format-icons": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "urgent": "",
+          "focused": "",
+          "default": ""
+      }
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "",
+        "format": "  {:%a %d %b, %I:%M %p}"
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "  {used} GIB"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+      	"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}  {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source":  "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "mpris": {
+	"format": "{player_icon}  {artist} - {title}",
+	"format-paused": "{status_icon}  {artist} - {title}",
+	"player-icons": {
+                "default": "",
+                "spotifyd": "",
+                "spotify": ""
+	},
+	"status-icons": {
+                "paused": ""
+	},
+	"ignored-players": ["firefox"]
+    },
+}
+
