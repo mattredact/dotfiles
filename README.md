@@ -35,19 +35,24 @@ Reboot, select Hyprland from display manager.
 
 ## Stack
 
-**Window Manager:** Hyprland with hyprpaper, hypridle, hyprlock
-**Panel:** Waybar
-**Launcher:** Wofi
-**Notifications:** Mako
-**Terminal:** Kitty
-**Shell:** Zsh + Starship
-**Editor:** Neovim
-**File Manager:** Yazi (TUI), Thunar (GUI)
-**Multiplexer:** Tmux
-
-**CLI:** eza, bat, ripgrep, fd, fzf, zoxide, btop, ncdu
-**Dev:** Docker, Kubernetes (helm/k9s), Terraform, Ansible, Git
-**Theme:** Jellybeans colorscheme, JetBrainsMono Nerd Font
+| Component | Tool |
+|-----------|------|
+| **Window Manager** | Hyprland |
+| **Wallpaper** | hyprpaper |
+| **Idle/Lock** | hypridle, hyprlock |
+| **Panel** | Waybar |
+| **Launcher** | Wofi |
+| **Notifications** | Mako |
+| **Terminal** | Kitty |
+| **Shell** | Zsh + Starship |
+| **Editor** | Neovim |
+| **File Manager** | Yazi (TUI), Thunar (GUI) |
+| **Multiplexer** | Tmux |
+| **CLI Tools** | eza, bat, ripgrep, fd, fzf, zoxide, btop, ncdu |
+| **Containers** | Docker, Kubernetes (helm, k9s, kompose) |
+| **IaC** | Terraform, OpenTofu, Ansible |
+| **Theme** | Jellybeans |
+| **Font** | JetBrainsMono Nerd Font |
 
 ## Configuration
 
