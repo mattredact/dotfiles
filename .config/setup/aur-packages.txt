@@ -1,0 +1,7 @@
+paru
+hyprshot
+brave-bin
+slack-desktop
+visual-studio-code-bin
+htop-vim
+yaru-icon-theme
