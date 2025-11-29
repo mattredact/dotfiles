@@ -2,6 +2,8 @@
 
 Arch Linux + Hyprland configuration managed with yadm.
 
+![Desktop](.config/screenshot.png)
+
 ## Installation
 
 ### Prerequisites
