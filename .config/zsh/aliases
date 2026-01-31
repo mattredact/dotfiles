@@ -1,13 +1,11 @@
-#!/usr/bin/env bash
-
 # General Alias
 alias rm='rm -vI'
 alias mv='mv -iv'
 alias cp='cp -iv'
 alias mkdir='mkdir -pv'
 alias vim='nvim'
-alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -I {} nvim {}'
-alias sd="cd ~ && cd \$(find * -type d | fzf)"
+alias v='fd --type f --hidden --exclude .git --print0 | fzf-tmux -p --reverse --read0 | xargs -0 -I {} nvim {}'
+alias sd='cd "$(fd --type d --hidden --exclude .git . ~ | fzf)"'
 alias ff='fastfetch'
 alias cc='clear'
 alias df='df -h'
@@ -15,7 +13,7 @@ alias cat='bat'
 alias free='free -m' # show sizes in MB
 alias ansibleupdate='just setup-all -K --ask-become-pass --ask-vault-pass'
 alias fpu='flatpak update'
-alias listinstalled='expac -H M '%-20n\t%10d' $(pacman -Qe)'
+alias listinstalled="expac -H M '%-20n\t%10d' \$(pacman -Qeq)"
 
 # Eza Alias
 alias ll='eza --all --long --color=auto --icons --group-directories-first'
@@ -25,7 +23,6 @@ alias ls='eza --grid --color auto --icons --sort=type'
 
 # More Random Alias
 alias conf='cd ~/.config'
-alias yt='yt-dlp'
 
 # Change directory aliases
 alias cd..='cd ..'
@@ -56,7 +53,7 @@ alias tms='tmux new-session -s'
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='grep -E --color=auto'
-alias fgrep='fgrep --color=auto'
+alias fgrep='grep -F --color=auto'
 
 alias theme="~/.config/themes/switch-theme.sh"
 
