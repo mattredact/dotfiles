@@ -59,3 +59,6 @@ alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
 
 alias theme="~/.config/themes/switch-theme.sh"
+
+# Claude Code
+alias claude-sessions='~/.local/bin/claude-sessions'
