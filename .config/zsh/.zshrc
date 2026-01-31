@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Performance optimization - compile if needed
-if [ ! -f "$ZDOTDIR/.zshrc.zwc" ] || [ "$ZDOTDIR/.zshrc" -nt "$ZDOTDIR/.zshrc.zwc" ]; then
+if [[ ! -f "$ZDOTDIR/.zshrc.zwc" ]] || [[ "$ZDOTDIR/.zshrc" -nt "$ZDOTDIR/.zshrc.zwc" ]]; then
     zcompile "$ZDOTDIR/.zshrc"
 fi
 
@@ -28,7 +28,6 @@ setopt EXTENDED_GLOB        # Use extended globbing syntax
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format
 setopt SHARE_HISTORY             # Share history between all sessions
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history
-setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again
 setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate
 setopt HIST_FIND_NO_DUPS         # Do not display a previously found event
 setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space
@@ -48,7 +47,6 @@ _comp_options+=(globdots)    # Include hidden files
 # Completion styles
 zstyle ':completion:*' completer _extensions _complete _approximate
 zstyle ':completion:*' menu select
-zstyle ':completion:*' increment yes
 zstyle ':completion:*' squeeze-slashes yes
 zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' list-dirs-first yes
@@ -98,7 +96,7 @@ bindkey '^Y' yank                 # ctrl + y
 ###################
 
 # Auto-suggestions
-if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#606090'
     ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -107,7 +105,7 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
 fi
 
 # Syntax highlighting
-if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     
     # Highlighters configuration
@@ -141,15 +139,18 @@ fi
 ###################
 
 # Load aliases if they exist
-[ -f "$ZDOTDIR/aliases" ] && source "$ZDOTDIR/aliases"
+[[ -f "$ZDOTDIR/aliases" ]] && source "$ZDOTDIR/aliases"
 
 ###################
 # SYSTEM SPECIFIC #
 ###################
 
 # Load local configurations if they exist
-[ -f "$ZDOTDIR/.zshrc.local" ] && source "$ZDOTDIR/.zshrc.local"
+[[ -f "$ZDOTDIR/.zshrc.local" ]] && source "$ZDOTDIR/.zshrc.local"
 
-# Fastfetch on start (consider moving this to .zlogin)
+# Keep only latest Claude Code backup
+ls -t ~/.claude.json.backup.* 2>/dev/null | tail -n +2 | xargs rm -f 2>/dev/null
+
+# Fastfetch on terminal open
 fastfetch
 
