@@ -3,7 +3,7 @@
     "spacing": 0, // Gaps between modules (4px)
     "modules-left": ["hyprland/workspaces", "mpris"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "memory", "cpu", "temperature","clock", "tray"],
+    "modules-right": ["custom/crypto", "pulseaudio", "memory", "cpu", "temperature","clock", "tray"],
     "layer": "top",
     "position": "top",
 
@@ -99,5 +99,11 @@
 	},
 	"ignored-players": ["firefox"]
     },
+
+    "custom/crypto": {
+        "exec": "~/.config/waybar/scripts/crypto.sh",
+        "return-type": "json",
+        "interval": 30
+    }
 }
 
