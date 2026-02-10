@@ -3,7 +3,32 @@
 THEME_DIR="$HOME/.config/themes"
 CURRENT_THEME_FILE="$THEME_DIR/.current-theme"
 ACTIVE_ENV_FILE="$THEME_DIR/.active-env"
-THEMES=(gruvbox moonfly tokyonight everforest jellybeans gyokuro hojicha iceclimber moon roseprime void lackluster emperor venom darkthrone aamis ash catppuccin felix solarized-osaka solarized gruvmat-hard gruvmat-med everblush)
+THEMES=(
+    gruvbox
+    moonfly
+    tokyonight
+    everforest
+    jellybeans
+    gyokuro
+    hojicha
+    iceclimber
+    moon
+    roseprime
+    void
+    lackluster
+    emperor
+    venom
+    darkthrone
+    aamis
+    ash
+    catppuccin
+    felix
+    solarized-osaka
+    solarized
+    gruvmat-hard
+    gruvmat-med
+    everblush
+)
 
 # File mapping: source (in theme dir) -> destination
 declare -A FILE_MAP=(
@@ -15,10 +40,6 @@ declare -A FILE_MAP=(
     [kitty-theme.conf]="$HOME/.config/kitty/current-theme.conf"
     [env-vars]="$ACTIVE_ENV_FILE"
     [eza-theme.yml]="$HOME/.config/eza/theme.yml"
-)
-
-# Optional files: copied if present, silently skipped if not
-declare -A OPTIONAL_MAP=(
     [yazi-theme.toml]="$HOME/.config/yazi/theme.toml"
 )
 
@@ -53,23 +74,18 @@ apply_theme() {
         fi
     done
 
-    # Optional files (silently skip if missing)
-    for src in "${!OPTIONAL_MAP[@]}"; do
-        local dest="${OPTIONAL_MAP[$src]}"
-        if [[ -f "$THEME_DIR/$theme/$src" ]]; then
-            cp "$THEME_DIR/$theme/$src" "$dest" || echo "  Failed: $src"
-        fi
-    done
-
-    # Source env vars for current session
-    [[ -f "$ACTIVE_ENV_FILE" ]] && source "$ACTIVE_ENV_FILE"
-
     echo "$theme" > "$CURRENT_THEME_FILE"
 
     # Reload applications
     hyprctl reload 2>/dev/null
-    pkill -x waybar 2>/dev/null && sleep 0.2; waybar > /dev/null 2>&1 &
-    pkill -x mako 2>/dev/null && sleep 0.2; mako > /dev/null 2>&1 &
+    pkill -x waybar 2>/dev/null
+    sleep 0.3
+    waybar > /dev/null 2>&1 &
+    disown
+    pkill -x mako 2>/dev/null
+    sleep 0.3
+    mako > /dev/null 2>&1 &
+    disown
     pkill -USR1 kitty 2>/dev/null
 
     if ((errors > 0)); then
@@ -197,7 +213,7 @@ case "${1:-toggle}" in
         list_themes
         echo ""
         echo "Commands: toggle, current, list, validate"
-        exit 1
+        exit 0
         ;;
     *)
         if is_theme "$1"; then

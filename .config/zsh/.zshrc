@@ -50,7 +50,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' squeeze-slashes yes
 zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' list-dirs-first yes
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' ignored-patterns '.git'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' rehash false
@@ -147,9 +147,6 @@ fi
 
 # Load local configurations if they exist
 [[ -f "$ZDOTDIR/.zshrc.local" ]] && source "$ZDOTDIR/.zshrc.local"
-
-# Keep only latest Claude Code backup
-ls -t ~/.claude.json.backup.* 2>/dev/null | tail -n +2 | xargs rm -f 2>/dev/null
 
 # Fastfetch on terminal open
 fastfetch
