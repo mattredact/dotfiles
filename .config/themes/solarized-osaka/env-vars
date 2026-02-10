@@ -1,0 +1,14 @@
+export BAT_THEME="Solarized (dark)"
+
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#002c38,bg:#001419,spinner:#268bd3,hl:#268bd3 \
+--color=fg:#9eabac,header:#268bd3,info:#576d74,pointer:#d23681 \
+--color=marker:#db302d,fg+:#9eabac,prompt:#29a298,hl+:#268bd3 \
+--color=border:#063540 \
+--height 60% \
+--border sharp \
+--layout reverse \
+--prompt '∷ ' \
+--pointer ▶ \
+--marker ⇒ \
+--multi"

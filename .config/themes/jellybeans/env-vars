@@ -1,0 +1,14 @@
+export BAT_THEME="TwoDark"
+
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#1c1c1c,bg:#111111,spinner:#94b978,hl:#ffb97b \
+--color=fg:#dedede,header:#ffb97b,info:#96bddb,pointer:#e17373 \
+--color=marker:#e1c0fa,fg+:#dedede,prompt:#96bddb,hl+:#ffb97b \
+--color=border:#303030 \
+--height 60% \
+--border sharp \
+--layout reverse \
+--prompt '∷ ' \
+--pointer ▶ \
+--marker ⇒ \
+--multi"

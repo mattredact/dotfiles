@@ -1,0 +1,14 @@
+export BAT_THEME="gruvbox-dark"
+
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#32302f,bg:#282828,spinner:#7daea3,hl:#7daea3 \
+--color=fg:#d4be98,header:#7daea3,info:#928374,pointer:#d3869b \
+--color=marker:#ea6962,fg+:#d4be98,prompt:#89b482,hl+:#7daea3 \
+--color=border:#45403d \
+--height 60% \
+--border sharp \
+--layout reverse \
+--prompt '∷ ' \
+--pointer ▶ \
+--marker ⇒ \
+--multi"

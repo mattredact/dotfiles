@@ -53,25 +53,28 @@
     },
     "clock": {
         "timezone": "",
-        "format": "  {:%a %d %b, %I:%M %p}"
+        "format": "  {:%a %d %b, %I:%M %p}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>"
     },
     "cpu": {
-        "format": "  {usage}%",
-        "tooltip": false
+        "format": " ",
+        "tooltip-format": "CPU: {usage}%"
     },
     "memory": {
-        "format": "  {used} GIB"
+        "format": "  ",
+        "tooltip-format": "Memory: {used}/{total} GiB ({percentage}%)"
     },
     "temperature": {
         "critical-threshold": 80,
       	"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "format": "{icon}  {temperatureC}°C",
+        "format": "{icon}",
+        "tooltip-format": "{temperatureC}°C",
         "format-icons": ["", "", ""]
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 2,
         "format": "{volume}% {icon}  {format_source}",
-        "format-muted": "  {format_source}",
+        "format-muted": "󰖁  {format_source}",
         "format-source":  "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -83,7 +86,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
     },
 
     "mpris": {

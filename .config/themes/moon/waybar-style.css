@@ -1,0 +1,77 @@
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+}
+
+.modules-right, .modules-left, .modules-center {
+  margin: 4px;
+}
+
+.modules-right > * > *, .modules-left, .modules-center {
+  border-radius: 2px;
+}
+
+.modules-right > * > * {
+  padding: 0px 12px;
+  font-weight: bold;
+  background-color: #191919;
+  margin-left: 4px;
+}
+
+#tray {
+  padding: 0px 12px;
+}
+
+window#waybar {
+  background-color: #111111;
+  color: #A1A1AC;
+  font-weight: bold;
+  border: solid 4px #111111;
+}
+
+.modules-left {
+  background-color: #191919;
+}
+
+#window {
+  background-color: #191919;
+  border-radius: 2px;
+  padding: 0px 12px;
+  color: #7e7e88;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#workspaces button {
+  font-weight: bold;
+  padding: 2px 6px;
+  background: none;
+  border: none;
+  border-radius: 2px;
+  color: #7e7e88;
+  border: solid 2px #191919;
+}
+
+#workspaces button.focused, #workspaces button.active {
+  background-color: #191919;
+  color: #A1A1AC;
+  border: solid 2px #191919;
+  border-bottom: 2px solid #6A6A7A;
+}
+
+#mpris {
+  padding: 2px 6px;
+  background-color: #6A6A7A;
+  color: #111111;
+  font-weight: bold;
+}
+
+#mpris.spotifyd, #mpris.spotify {
+  background-color: #6A6A7A;
+  color: #111111;
+  border-radius: 2px;
+  padding: 0px 12px;
+}

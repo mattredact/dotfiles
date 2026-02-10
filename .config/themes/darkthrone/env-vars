@@ -1,0 +1,15 @@
+export BAT_THEME="ansi"
+
+export FZF_DEFAULT_OPTS=" \
+--color=fg:#c1c1c1,bg:#000000,hl:#ffffff,gutter:#000000 \
+--color=fg+:#c1c1c1,bg+:#121212,hl+:#ffffff \
+--color=info:#505050,prompt:#ffffff,pointer:#c1c1c1 \
+--color=marker:#999999,spinner:#999999,header:#999999 \
+--color=border:#333333 \
+--height 60% \
+--border sharp \
+--layout reverse \
+--prompt '∷ ' \
+--pointer ▶ \
+--marker ⇒ \
+--multi"

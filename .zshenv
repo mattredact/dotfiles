@@ -12,7 +12,8 @@ export TERMINAL="kitty"
 export BROWSER="firefox"
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 [[ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ]] && export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export BAT_THEME="gruvbox-dark"
+# Theme env vars (BAT_THEME, FZF_DEFAULT_OPTS)
+[[ -f "$HOME/.config/themes/.active-env" ]] && source "$HOME/.config/themes/.active-env"
 
 # XDG
 export XDG_DATA_HOME="${HOME}/.local/share"
@@ -36,32 +37,14 @@ export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 export HISTSIZE=5000                   # Maximum events for internal history
 export SAVEHIST=5000                   # Maximum events in history file
 
-# fzf - Subtle Gruvbox Material Dark Hard colors
+# fzf (non-theme settings)
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
 export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
 
-export FZF_DEFAULT_OPTS="--height 60% --border sharp --layout reverse --color 'bg+:#1c1c1c,bg:#151515,spinner:#99ad6a,hl:#fad07a,fg:#e8e8d3,header:#ffb964,info:#8197bf,pointer:#cf6a4c,marker:#c6b6ee,fg+:#e8e8d3,prompt:#8197bf,hl+:#fad07a,border:#303030' --prompt '∷ ' --pointer ▶ --marker ⇒"
-
-# Settings: LS_COLORS
-LS_COLORS='no=0:fi=0:di=34'
-
-# Hidden files
-LS_COLORS+=":.*=90"
-
-# Programming (purple)
-LS_COLORS+=":*.py=36:*.sh=36"
-LS_COLORS+=":*Dockerfile=36:*Makefile=36"
-
-# Text files (green)
-LS_COLORS+=":*.md=32:*.txt=32:*.html=32"
-
-# Config files (yellow)
-LS_COLORS+=":*.json=33:*.toml=33:*.yml=33"
-LS_COLORS+=":*.in=33:*.conf=33:*.example=33"
-LS_COLORS+=":.zshrc=33:.zprofile=33"
-export LS_COLORS
+# eza uses ~/.config/eza/theme.yml for colors (hex, theme-independent)
+# LS_COLORS disabled - it overrides eza's theme file
 
 # Path (typeset -U prevents duplicates on re-source)
 typeset -U path
