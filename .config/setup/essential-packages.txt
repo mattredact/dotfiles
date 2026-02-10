@@ -6,11 +6,10 @@ hyprlock
 hyprshot
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
-wlroots0.18
 
 # UI
 waybar
-wofi
+fuzzel
 mako
 nwg-look
 qt5ct
