@@ -52,7 +52,6 @@
         "spacing": 10
     },
     "clock": {
-        "timezone": "",
         "format": "  {:%a %d %b, %I:%M %p}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>"
     },
