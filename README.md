@@ -41,7 +41,7 @@ Reboot, select Hyprland from display manager.
 | **Wallpaper** | hyprpaper |
 | **Idle/Lock** | hypridle, hyprlock |
 | **Panel** | Waybar |
-| **Launcher** | Wofi |
+| **Launcher** | Fuzzel |
 | **Notifications** | Mako |
 | **Terminal** | Kitty |
 | **Shell** | Zsh + Starship |
@@ -73,7 +73,7 @@ Edit `~/.config/hypr/monitors.conf`
 
 ### Themes
 
-24 themes managed by `~/.config/themes/switch-theme.sh`. Each theme applies colors to Hyprland, Hyprlock, Waybar, Kitty, Mako, Wofi, and eza.
+24 themes managed by `~/.config/themes/switch-theme.sh`. Each theme applies colors to Hyprland, Hyprlock, Waybar, Kitty, Mako, Fuzzel, and eza.
 
 ```bash
 theme jellybeans    # Switch to a theme
