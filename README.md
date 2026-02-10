@@ -45,13 +45,12 @@ Reboot, select Hyprland from display manager.
 | **Notifications** | Mako |
 | **Terminal** | Kitty |
 | **Shell** | Zsh + Starship |
-| **Editor** | Neovim |
+| **Editor** | Neovim (LazyVim) |
 | **File Manager** | Yazi (TUI), Thunar (GUI) |
 | **Multiplexer** | Tmux |
 | **CLI Tools** | eza, bat, ripgrep, fd, fzf, zoxide, btop, ncdu |
 | **Containers** | Docker, Kubernetes (helm, k9s, kompose) |
 | **IaC** | Terraform, OpenTofu, Ansible |
-| **Theme** | Jellybeans |
 | **Font** | JetBrainsMono Nerd Font |
 
 ## Configuration
@@ -72,8 +71,16 @@ Edit `~/.config/hypr/monitors.conf`
 | SUPER + ALT + H/J/K/L | Resize windows |
 | CTRL + ALT + L | Lock screen |
 
-### Colors
-All color definitions: `~/.config/hypr/colors.conf`
+### Themes
+
+24 themes managed by `~/.config/themes/switch-theme.sh`. Each theme applies colors to Hyprland, Hyprlock, Waybar, Kitty, Mako, Wofi, and eza.
+
+```bash
+theme jellybeans    # Switch to a theme
+theme               # Cycle to next
+theme list          # Show all themes
+theme current       # Show active theme
+```
 
 ## Package Management
 
