@@ -1,0 +1,9 @@
+$font = JetBrainsMono Nerd Font
+$base = {{BG_RGB}}
+$text = {{FG_RGB}}
+$accent = {{ACCENT_RGB}}
+$surface0 = {{SURFACE_RGB}}
+$red = {{COLOR_RED_RGB}}
+$yellow = {{COLOR_YELLOW_RGB}}
+$textAlpha = {{BG_STRIP}}
+$accentAlpha = {{ACCENT_STRIP}}

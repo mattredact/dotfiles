@@ -1,0 +1,20 @@
+# {{NAME}} colors for Hyprland
+$bg = {{HYPR_BG_HYPR}}
+$fg = {{HYPR_FG_HYPR}}
+$fgbr = {{HYPR_DIM_HYPR}}
+$black = {{HYPR_BLACK_HYPR}}
+$red = {{HYPR_RED_HYPR}}
+$green = {{HYPR_GREEN_HYPR}}
+$yellow = {{HYPR_YELLOW_HYPR}}
+$blue = {{HYPR_BLUE_HYPR}}
+$purple = {{HYPR_PURPLE_HYPR}}
+$cyan = {{HYPR_CYAN_HYPR}}
+$white = {{HYPR_WHITE_HYPR}}
+$blackbr = {{HYPR_BLACKBR_HYPR}}
+$redbr = {{HYPR_REDBR_HYPR}}
+$greenbr = {{HYPR_GREENBR_HYPR}}
+$yellowbr = {{HYPR_YELLOWBR_HYPR}}
+$bluebr = {{HYPR_BLUEBR_HYPR}}
+$purplebr = {{HYPR_PURPLEBR_HYPR}}
+$cyanbr = {{HYPR_CYANBR_HYPR}}
+$whitebr = {{HYPR_WHITEBR_HYPR}}
