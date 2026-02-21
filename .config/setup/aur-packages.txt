@@ -1,0 +1,6 @@
+paru
+brave-bin
+slack-desktop
+visual-studio-code-bin
+htop-vim
+yaru-icon-theme
