@@ -1,0 +1,96 @@
+{
+    "height": 40, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/crypto", "pulseaudio", "memory", "cpu", "temperature","clock", "tray"],
+    "layer": "top",
+    "position": "top",
+
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "sort-by-number": true,
+      "sort-by-name": false,
+      "all-outputs": true,
+      "format-icons": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "urgent": "",
+          "focused": "",
+          "default": ""
+      }
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "  {:%a %d %b, %I:%M %p}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>"
+    },
+    "cpu": {
+        "format": " ",
+        "tooltip-format": "CPU: {usage}%"
+    },
+    "memory": {
+        "format": "  ",
+        "tooltip-format": "Memory: {used}/{total} GiB ({percentage}%)"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+      	"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "format": "{icon}",
+        "tooltip-format": "{temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "pulseaudio": {
+        "scroll-step": 2,
+        "format": "{volume}% {icon}  {format_source}",
+        "format-muted": "󰖁  {format_source}",
+        "format-source":  "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+
+    "mpris": {
+	"format": "{player_icon}  {artist} - {title}",
+	"format-paused": "{status_icon}  {artist} - {title}",
+	"player-icons": {
+                "default": "",
+                "spotifyd": "",
+                "spotify": ""
+	},
+	"status-icons": {
+                "paused": ""
+	},
+	"ignored-players": ["firefox"]
+    },
+
+    "custom/crypto": {
+        "exec": "~/.config/waybar/scripts/crypto.sh",
+        "return-type": "json",
+        "interval": 30
+    }
+}
+
