@@ -1,0 +1,8 @@
+[include]
+    path = user-email
+[includeIf "hasconfig:remote.*.url:https://github.com/**"]
+    path = github-email
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/**"]
+    path = gitlab-email
+[user]
+	email = your-email@example.com
