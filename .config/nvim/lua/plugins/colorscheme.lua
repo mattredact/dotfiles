@@ -84,14 +84,14 @@ return {
   -- Add miasma
   {
     "xero/miasma.nvim",
-    lazy = true,
+    lazy = false,
   },
 
   -- Tell LazyVim to use it
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "carbonfox",
+      colorscheme = "miasma",
     },
   },
 }
