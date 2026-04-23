@@ -9,7 +9,7 @@ export TERM="xterm-256color"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERMINAL="kitty"
-export BROWSER="firefox"
+export BROWSER="vivaldi-stable"
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 [[ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ]] && export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # Theme env vars (BAT_THEME, FZF_DEFAULT_OPTS)
